@@ -1,5 +1,6 @@
 import './App.css';
-import Card from './components/card'
+import Card from './components/card';
+import NewCardButton from './components/NewCardButton';
 
 function App() {
   let links = [
@@ -23,13 +24,19 @@ function App() {
       name: 'test-5',
       url: 'test-5.com'
     },
+    
   ];
 
   return (
-      
-    links.map((link, index) => (
-      <Card key={index} link={link} />
-    ))
+    <div className='container'>
+      {
+        links.map((link, index) => (
+          <Card key={index} link={link} />
+        ))
+      }
+  
+      <NewCardButton />
+    </div>  
 
   );
 }
