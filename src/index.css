@@ -49,3 +49,24 @@ a{
   border-radius: 50%;
   object-fit: cover;
 }
+
+.card.add{
+  background-color: lavender;
+}
+
+.card.add .logo{
+  background-color: gray;
+}
+
+.card.add .logo::after{
+  content: '+';
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2rem;
+  font-weight: bold;
+}
