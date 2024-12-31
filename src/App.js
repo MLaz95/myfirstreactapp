@@ -1,6 +1,7 @@
 import './App.css';
 import Card from './components/card';
 import NewCardButton from './components/NewCardButton';
+import Modal from './components/Modal';
 
 function App() {
   let links = [];
@@ -14,6 +15,7 @@ function App() {
       }
   
       <NewCardButton />
+      <Modal />
     </div>  
 
   );
