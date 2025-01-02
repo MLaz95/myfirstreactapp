@@ -1,8 +1,5 @@
 function Modal({ newLink }){
 
-    const linkName = document.getElementById('link-name');
-    const linkUrl = document.getElementById('link-url');
-
     return(
         <form className="newLinkForm"
             onSubmit={(e) => {
