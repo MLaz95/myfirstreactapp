@@ -20,7 +20,7 @@ function App() {
     }
   ]);
 
-  function addLink(newName, newUrl){
+  function HandleNewLink(newName, newUrl){
     setLinks([
       ...links,
       {name: newName, url: newUrl}
@@ -39,7 +39,7 @@ function App() {
       {/* <button onClick={() => addLink('test4', 'test4.com')}>Press Me</button> */}
   
       <NewCardButton />
-      <Modal />
+      <Modal newLink={HandleNewLink}/>
     </div>  
 
   );

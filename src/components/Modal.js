@@ -4,7 +4,12 @@ function Modal({ newLink }){
     const linkUrl = document.getElementById('link-url');
 
     return(
-        <div className="newLinkForm">
+        <form className="newLinkForm"
+            onSubmit={(e) => {
+                e.preventDefault();
+                newLink(e.target[0].value, e.target[1].value)
+            }}
+        >
             <div>
                 <label htmlFor='link-name'>Name</label>
                 <input id="link-name" type="text" />
@@ -13,10 +18,8 @@ function Modal({ newLink }){
                 <label htmlFor='link-url'>Url</label>
                 <input id="link-url" type="text" />   
             </div>
-            <button 
-                
-            >Confirm</button>
-        </div>
+            <button>Confirm</button>
+        </form>
     )
 }
 
