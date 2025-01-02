@@ -1,11 +1,7 @@
-function Modal(){
-    function setLink(){
-        const nameEl = document.getElementById('link-name');
-        const nameUrl = document.getElementById('link-url');
-        console.log('name', nameEl.value)
-        console.log('nameUrl', nameUrl.value)
-        localStorage.setItem('links',)
-    }
+function Modal({ newLink }){
+
+    const linkName = document.getElementById('link-name');
+    const linkUrl = document.getElementById('link-url');
 
     return(
         <div className="newLinkForm">
@@ -17,7 +13,9 @@ function Modal(){
                 <label htmlFor='link-url'>Url</label>
                 <input id="link-url" type="text" />   
             </div>
-            <button >Confirm</button>
+            <button 
+                
+            >Confirm</button>
         </div>
     )
 }
