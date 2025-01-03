@@ -1,8 +1,18 @@
-function NewCardButton() {
+function NewCardButton({isModalOpen, setModalOpen}) {
+
+    function openModal(){
+        if(!isModalOpen){
+            setModalOpen(true)
+            console.log('Modal Open!')
+        }
+    }
 
     return(
         
-        <div className='card add'>
+        <div
+        onClick={openModal}
+        className='card add'
+        >
             <div className="logo"></div>
             <p>Add New</p>
         </div>

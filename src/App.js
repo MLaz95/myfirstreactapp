@@ -20,6 +20,8 @@ function App() {
     }
   ]);
 
+  const [isModalOpen, setModalOpen] = useState(false);
+  
   function HandleNewLink(newName, newUrl){
     setLinks([
       ...links,
@@ -38,8 +40,8 @@ function App() {
 
       {/* <button onClick={() => addLink('test4', 'test4.com')}>Press Me</button> */}
   
-      <NewCardButton />
-      <Modal newLink={HandleNewLink}/>
+      <NewCardButton isModalOpen={isModalOpen} setModalOpen={setModalOpen}/>
+      <Modal isModalOpen={isModalOpen} setModalOpen={setModalOpen} newLink={HandleNewLink}/>
     </div>  
 
   );
