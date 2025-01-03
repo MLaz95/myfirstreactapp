@@ -70,12 +70,3 @@ a{
   font-size: 2rem;
   font-weight: bold;
 }
-
-.newLinkForm{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  /* test */
-  background-color: aqua;
-}
