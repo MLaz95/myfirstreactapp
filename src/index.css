@@ -4,6 +4,23 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background: white;
+  --text: black;
+  --accent: royalblue;
+}
+
+[data-theme='dark']{
+  --background: #252422;
+  --text: white;
+  --accent: #eb5e28;
+}
+
+#background{
+  background-color: var(--background);
+  color: var(--text);
+}
+
 .container{
   max-width: 1200px;
   margin: 0 auto;
@@ -15,21 +32,18 @@
   align-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-
-  /* test */
-  background-color: pink;
 }
 
 a{
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
 .card{
   width: 5rem;
   height: 6rem;
 
-  border: 1px solid gray;
+  border: 1px solid var(--accent);
   border-radius: 10%;
 
   display: flex;
@@ -38,8 +52,6 @@ a{
   align-items: center;
 
   text-align: center;
-  /* test */
-  background-color: red;
 }
 
 .logo{
@@ -48,10 +60,6 @@ a{
 
   border-radius: 50%;
   object-fit: cover;
-}
-
-.card.add{
-  background-color: lavender;
 }
 
 .card.add .logo{
