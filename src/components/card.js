@@ -1,8 +1,11 @@
 function Card({link}){
+
+    const favIconUrl = 'https://s2.googleusercontent.com/s2/favicons?domain_url=' + link.url + '&sz=128';
+
     return(
-        <a href={link.url}>
+        <a href={link.url} target="_blank">
             <div className='card'>
-                <img className="logo" src="https://static.scientificamerican.com/sciam/cache/file/2AE14CDD-1265-470C-9B15F49024186C10_source.jpg?w=1200" />
+                <img className="logo" src={favIconUrl} />
                 <p>{link.name}</p>
             </div>
         </a>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import useLocalStorage from 'use-local-storage';
 import './App.css';
-import Card from './components/card';
+import Card from './components/Card';
 import NewCardButton from './components/NewCardButton';
 import Modal from './components/Modal';
 
@@ -19,12 +19,12 @@ function App() {
   // stateful array of shortcuts
   const [links, setLinks] = useState([
     {
-      name: 'test',
-      url: 'test.com',
+      name: 'css-tricks',
+      url: 'https://css-tricks.com',
     },
     {
-      name: 'test2',
-      url: 'test2.com',
+      name: 'google',
+      url: 'https://www.google.com',
     },
     {
       name: 'test3',
