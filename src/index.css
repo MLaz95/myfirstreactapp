@@ -97,11 +97,18 @@ a{
 }
 
 .logo{
-  width: 60%;
+  width: 3rem;
   aspect-ratio: 1 / 1;
 
   border-radius: 50%;
   object-fit: cover;
+}
+
+.card.add{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .card.add .logo{
