@@ -19,14 +19,17 @@ function App() {
   // stateful array of shortcuts
   const [links, setLinks] = useState([
     {
+      id: 0,
       name: 'css-tricks',
       url: 'https://css-tricks.com',
     },
     {
+      id: 1,
       name: 'google',
       url: 'https://www.google.com',
     },
     {
+      id: 2,
       name: 'test3',
       url: 'test3.com',
     }
@@ -36,8 +39,17 @@ function App() {
   function HandleNewLink(newName, newUrl){
     setLinks([
       ...links,
-      {name: newName, url: newUrl}
+      {id: links.length, name: newName, url: newUrl}
     ]);
+    
+    console.log(links);
+    setModalOpen(false);
+  }
+
+  function DeleteLink(link){
+    setLinks(
+      links.filter(l => l.id !== link.id)
+    );
   }
   
   // used to manage modal component
@@ -48,7 +60,7 @@ function App() {
       <div className='container'>
         {
           links.map((link, index) => (
-            <Card key={index} link={link} />
+            <Card key={index} link={link} deleteLink={DeleteLink} />
           ))
         }
 
