@@ -68,7 +68,7 @@ function App() {
     
         <NewCardButton isModalOpen={isModalOpen} setModalOpen={setModalOpen}/>
         <Modal isModalOpen={isModalOpen} setModalOpen={setModalOpen} newLink={HandleNewLink}/>
-        <button onClick={toggleTheme}>Light Switch</button>
+        <button onClick={toggleTheme} className='light-btn'>{theme === 'light' ? String.fromCharCode(9788) : String.fromCharCode(9790)}</button>
       </div>
     </div>
 
