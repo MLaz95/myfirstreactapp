@@ -1,19 +1,19 @@
 function Card({ link, deleteLink }){
 
     const favIconUrl = 'https://s2.googleusercontent.com/s2/favicons?domain_url=' + link.url + '&sz=128';
-    function openMenu(){
-        console.log('yay');
-    }
 
     return(
-        <div>
+        <div className='card'>
             <a href={link.url} target="_blank">
-                <div className='card'>
+                <div >
                     <img className="logo" src={favIconUrl} />
                     <p>{link.name}</p>
                 </div>
             </a>
-            <button onClick={() => {deleteLink(link)}}>Delete</button>
+            <button
+                onClick={() => {deleteLink(link)}}
+                className='del-btn'
+            >X</button>
         </div>
     );
 }
