@@ -16,24 +16,8 @@ function App() {
     setTheme(newTheme);
   }
 
-  // stateful array of shortcuts
-  const [links, setLinks] = useState([
-    {
-      id: 0,
-      name: 'css-tricks',
-      url: 'https://css-tricks.com',
-    },
-    {
-      id: 1,
-      name: 'google',
-      url: 'https://www.google.com',
-    },
-    {
-      id: 2,
-      name: 'test3',
-      url: 'test3.com',
-    }
-  ]);
+  // array of shortcuts saved in localstorage
+  const [links, setLinks] = useLocalStorage('links', []);
   
   // adds a new shortcut to array
   function HandleNewLink(newName, newUrl){
