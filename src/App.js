@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import useLocalStorage from 'use-local-storage';
+import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import Card from './components/Card';
 import NewCardButton from './components/NewCardButton';
@@ -18,12 +19,13 @@ function App() {
 
   // array of shortcuts saved in localstorage
   const [links, setLinks] = useLocalStorage('links', []);
+  console.log(links)
   
   // adds a new shortcut to array
   function HandleNewLink(newName, newUrl){
     setLinks([
       ...links,
-      {id: links.length, name: newName, url: newUrl}
+      {id: uuidv4(), name: newName, url: newUrl}
     ]);
     
     console.log(links);
@@ -47,8 +49,6 @@ function App() {
             <Card key={index} link={link} deleteLink={DeleteLink} />
           ))
         }
-
-        {/* <button onClick={() => addLink('test4', 'test4.com')}>Press Me</button> */}
     
         <NewCardButton isModalOpen={isModalOpen} setModalOpen={setModalOpen}/>
         <Modal isModalOpen={isModalOpen} setModalOpen={setModalOpen} newLink={HandleNewLink}/>
