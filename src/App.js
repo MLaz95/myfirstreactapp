@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div id='background' data-theme={theme}>
-      <div className='container'>
+      <div className='container roboto-default'>
         {
           links.map((link, index) => (
             <Card key={index} link={link} deleteLink={DeleteLink} />
