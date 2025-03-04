@@ -8,12 +8,15 @@
 
 :root {
   --background: white;
+  --shadow: gray;
   --text: black;
-  --accent: royalblue;
+  --accent: #6096BA;
+  --nav-height: 100px;
 }
 
 [data-theme='dark']{
   --background: #252422;
+  --shadow: black;
   --bg-lighter: #CCC5B9;
   --bg-darker: #252422;
   --text: white;
@@ -23,6 +26,8 @@
 #background{
   background-color: var(--background);
   color: var(--text);
+  min-height: 100vh;
+  /* height: 5000px; */
 }
 
 .roboto-default {
@@ -37,14 +42,62 @@
 .container{
   max-width: 1200px;
   margin: 0 auto;
-  height: 100vh;
+}
 
+nav{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  padding: 0 5rem;
+  background-color: var(--background);
+  transition: box-shadow 0.3s;
+}
+
+nav.shadow{
+  box-shadow: 0 0rem 3rem var(--shadow);
+}
+
+.nav-content{
+  height: var(--nav-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grid{
+  padding-top: calc(3rem + var(--nav-height));
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.new-btn{
+  padding: 1rem;
+  background-color: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.light-btn{
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+
+  background-color: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  color: var(--text);
+}
+
+.tile{
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
 }
 
 a{
@@ -115,42 +168,6 @@ a{
   object-fit: cover;
 }
 
-.card.add{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.card.add .logo{
-  background-color: gray;
-}
-
-.card.add .logo::after{
-  content: '+';
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.light-btn{
-  position: absolute;
-  top: 5rem;
-  right: 5rem;
-
-  cursor: pointer;
-  font-size: 1.5rem;
-  width: 3rem;
-  height: 3rem;
-
-  background-color: transparent;
-  border: 1px solid var(--accent);
-  border-radius: 50%;
-  color: var(--text);
+.new-btn:hover{
+  background-color: var(--accent);
 }

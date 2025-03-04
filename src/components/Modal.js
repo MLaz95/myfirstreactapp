@@ -17,10 +17,12 @@ function Modal({ newLink, isModalOpen, setModalOpen }){
                     <div className={styles.input}>
                         <label htmlFor='link-name'>Name</label>
                         <input id="link-name" type="text" />
+                        <span id="link-name-err" className={styles.errorTxt}>Don't forget to input a name!</span>
                     </div>
                     <div className={styles.input}>
                         <label htmlFor='link-url'>Url</label>
-                        <input id="link-url" type="text" />   
+                        <input id="link-url" type="text" />
+                        <span id="link-url-err" className={styles.errorTxt}>Don't forget to input a url!</span>
                     </div>
                     <div className={styles.buttons}>
                         <button type="submit">Confirm</button>

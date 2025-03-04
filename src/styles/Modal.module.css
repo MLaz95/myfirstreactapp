@@ -1,11 +1,11 @@
 .modal{
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     width: 25rem;
-    height: 16rem;
+    /* height: 16rem; */
 
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@
 
     /* test */
     background-color: var(--background);
-    box-shadow: 0.5rem 0.5rem 1rem black;
+    box-shadow: 0.5rem 0.5rem 1rem var(--shadow);
 }
 
 .modal h3{
@@ -45,6 +45,13 @@
 .input input:focus{
     outline: none;
     border: 2px solid var(--accent);
+}
+
+.errorTxt{
+    font-style: italic;
+    font-size: 0.8rem;
+    color: red;
+    display: none;
 }
 
 .buttons{
